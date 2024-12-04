@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import autoprefixer from 'autoprefixer'
+import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -24,5 +25,12 @@ export default defineConfig({
         math: "always"
       }
     }
+  },
+  resolve: {
+    alias: {
+      // 使用 @ 替换src目录
+      '@': resolve(__dirname, './src')
+    }
   }
+
 })
