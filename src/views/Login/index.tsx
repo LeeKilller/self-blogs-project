@@ -26,7 +26,7 @@ const Login: FC = () => {
 
     return (
         <div className={loginWrapper}>
-            <ParticlesBg type='cobweb' color='#00b96b' bg={true} />
+            <ParticlesBg type='cobweb' color='#0052d9' bg={true} />
             <div className={loginBox}>
                 <header className={loginHeader}>
                     <div>

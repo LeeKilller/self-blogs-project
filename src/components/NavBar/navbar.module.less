@@ -1,0 +1,31 @@
+@import url(/src/design/utils.less);
+
+.navBarWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 48px;
+
+    hr {
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        background-color: #f0f0f0;
+        border: 0;
+        z-index: -999;
+    }
+
+    img {
+        height: 36px;
+        .cricled();
+    }
+
+    .menu {
+        height: 100%;
+    }
+
+    .loginBtn {
+        cursor: pointer;
+    }
+}
