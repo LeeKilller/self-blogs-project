@@ -1,6 +1,6 @@
-import { ThemTypes } from "./enums";
+import { ThemeTypes } from "./enums";
 
-const { Light, Dark } = ThemTypes;
+const { Light, Dark } = ThemeTypes;
 
 const themConfig = {
     them: 'light',

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import router from '@/route'
 import { RouterProvider } from 'react-router/dom'
 import { ConfigProvider } from 'antd'
-import { ThemTypes } from './global/enums'
+import { ThemeTypes } from './global/enums'
 import { themMap } from './global/congfig'
 
 const App: FC = () => {
@@ -10,7 +10,7 @@ const App: FC = () => {
     return (
 
         <ConfigProvider
-            theme={themMap[ThemTypes.Light]}
+            theme={themMap[ThemeTypes.Light]}
         >
             <RouterProvider router={router} />
         </ConfigProvider>
