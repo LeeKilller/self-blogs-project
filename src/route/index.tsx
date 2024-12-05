@@ -5,11 +5,17 @@ import {
     Login
 } from "@/views";
 
+const metaRoutes = import.meta.glob('./routes/*.tsx', { eager: true }) as Record<string,any>;
+
+const metaRouteList: RouteObject[] = [];
+
+Object.keys(metaRoutes).forEach(key => {
+    const module = metaRoutes[key].default || {};
+    const moduleList = Array.isArray(module) ? [...module] : [module];
+    metaRouteList.push(...moduleList);
+})
+
 const rootRoute: RouteObject[] = [
-    {
-        index: true,
-        element: <Navigate to='/404' />
-    },
     {
         path: '/login',
         element: <Login />
@@ -23,7 +29,7 @@ const rootRoute: RouteObject[] = [
         element: <PageException />,
         loader: () => ({ status: '404' })
     },
-
+    ...metaRouteList
 ]
 
 
