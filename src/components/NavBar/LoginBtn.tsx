@@ -7,7 +7,7 @@ import styles from './navbar.module.less';
 const LoginBtn: FC = () => {
     const navigate = useNavigate();
 
-    const { LoginBtn } = styles;
+    const { loginBtn } = styles;
 
     const handleClick = () => {
         navigate('/login');
@@ -15,7 +15,7 @@ const LoginBtn: FC = () => {
 
     return (
         <div 
-            className={LoginBtn}
+            className={loginBtn}
             onClick={handleClick}
         >
             <SettingOutlined />

@@ -4,6 +4,8 @@ import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import { Link } from 'react-router';
 import LoginBtn from './LoginBtn';
+import ThemeSelector from './ThemeSelector';
+import SearchBtn from './SearchBtn';
 
 import header from '@/assets/header.jpg';
 import styles from './navbar.module.less';
@@ -42,6 +44,8 @@ const NavBar: FC = () => {
                     <Link to="/about">关于</Link>
                 </Item>
             </Menu>
+            <SearchBtn />
+            <ThemeSelector />
             <LoginBtn />
         </nav>
     )

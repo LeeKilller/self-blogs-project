@@ -19,13 +19,54 @@
     img {
         height: 36px;
         .cricled();
+        margin: 0 20px;
     }
 
     .menu {
         height: 100%;
+        margin-right: auto;
+    }
+
+    .btnStyle {
+        width: 24px;
+        height: 24px;
+        .middled();
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 20px;
+        transition: all .5s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     .loginBtn {
+        .btnStyle();
+    }
+
+    .searchBtn {
+        height: 24px;
+        font-size: 20px;
+        margin-right: 20px;
+        .middled();
+        transition: all .5s;
         cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        div {
+            width: 80px;
+            height: 22px;
+            border-radius: 5px;
+            margin-right: 5px;
+            border: solid 1px #d2d5da;
+        }
+    }
+
+    .themeSelector {
+        .btnStyle();
     }
 }
