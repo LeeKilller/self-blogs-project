@@ -5,12 +5,12 @@ import styles from './navbar.module.less';
 
 
 const LoginBtn: FC = () => {
-    const navigate = useNavigate();
 
     const { loginBtn } = styles;
 
     const handleClick = () => {
-        navigate('/login');
+        window.open("/login", "_blank", "noreferrer");
+        //navigate('/login');
     }
 
     return (
