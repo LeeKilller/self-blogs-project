@@ -1,0 +1,48 @@
+@import url(/src/design/utils.less);
+
+
+.loginWrapper {
+    .middled();
+    height: 100vh;
+
+    .loginBox {
+        .middled();
+        flex-direction: column;
+        max-width: 400px;
+        background-color: aquamarine;
+        padding: 20px 30px;
+
+
+        .loginHeader {
+            .middled();
+            flex-direction: column;
+            margin-bottom: 40px;
+
+            div {
+                .middled();
+
+                img {
+                    max-width: 40px;
+                    .cricled()
+                }
+
+                h2 {
+
+                    text-wrap: nowrap;
+                }
+            }
+        }
+
+        .loginForm {
+            width: 320px;
+            .loginInput {
+                width: 100%;
+            }
+
+            .loginButton {
+                width: 100%;
+            }
+        }
+    }
+
+}
