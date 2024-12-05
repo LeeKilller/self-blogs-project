@@ -7,7 +7,7 @@ import LoginBtn from './LoginBtn';
 import ThemeSelector from './ThemeSelector';
 import SearchBtn from './SearchBtn';
 
-import header from '@/assets/header.jpg';
+import header from '@/assets/header.svg';
 import styles from './navbar.module.less';
 
 const NavBar: FC = () => {
