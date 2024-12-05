@@ -21,7 +21,7 @@ const Login: FC = () => {
     } = styles
 
     const handleLogin = () => {
-        
+        navigate('/admin');
     }
 
     return (
@@ -44,7 +44,7 @@ const Login: FC = () => {
                             <Input.Password prefix={<LockOutlined />} placeholder='密码' size='large' />
                         </Item>
                         <Item>
-                            <Button htmlType='button' type='primary' className={loginButton} size='large' >
+                            <Button onClick={handleLogin} htmlType='button' type='primary' className={loginButton} size='large' >
                                 登录
                             </Button>
                         </Item>
