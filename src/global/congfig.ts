@@ -15,7 +15,7 @@ export const themMap = {
     [Light]:{
         token:{
             colorPrimary: '#00b96b',
-            borderRadius: 2,
+            borderRadius: 5,
             colorBgContainer: '#f6ffed',
         }
     },
