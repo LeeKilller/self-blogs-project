@@ -12,11 +12,13 @@
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
     "@bytemd/plugin-gfm": "^1.21.0",
+    "@bytemd/plugin-highlight-ssr": "^1.21.0",
     "@bytemd/react": "^1.21.0",
     "@reduxjs/toolkit": "^2.4.0",
     "@types/node": "^22.10.1",
     "antd": "^5.22.3",
     "autoprefixer": "^10.4.20",
+    "copy-to-clipboard": "3.3.3",
     "less": "^4.2.1",
     "particles-bg": "^2.5.5",
     "postcss": "^8.4.49",
@@ -24,7 +26,9 @@
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
     "react-router": "^7.0.2",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "rehype-raw": "6.1.1",
+    "unist-util-visit": "4.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

@@ -4,6 +4,7 @@ import Home from "./Home";
 import Tags from "./Tags";
 import About from "./About";
 import TimeLine from "./TimeLine"; 
+import EditPage from "./EditPage";
 
 
 
@@ -13,5 +14,6 @@ export {
     Home,
     About,
     TimeLine,
-    Tags
+    Tags,
+    EditPage
 }

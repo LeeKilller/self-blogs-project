@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import type { RouteObject } from "react-router";
+import { genFullPath } from "./utils";
 import {
     PageException,
     Login
@@ -12,6 +13,9 @@ const metaRouteList: RouteObject[] = [];
 Object.keys(metaRoutes).forEach(key => {
     const module = metaRoutes[key].default || {};
     const moduleList = Array.isArray(module) ? [...module] : [module];
+
+    genFullPath(moduleList);
+
     metaRouteList.push(...moduleList);
 })
 
