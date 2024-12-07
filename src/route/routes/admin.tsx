@@ -13,7 +13,7 @@ const adminRoutes: RouteObject[] = [
                 element:LazyLoad(lazy(() => import('@/views/EditPage')))
             },
             {
-                path:'analyse',
+                index:true,
                 element:LazyLoad(lazy(() => import('@/views/Analyse')))
             },
             {
