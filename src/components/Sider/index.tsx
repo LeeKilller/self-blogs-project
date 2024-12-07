@@ -1,12 +1,20 @@
 import { FC } from 'react';
+import { Menu } from 'antd';
+import { Link } from 'react-router';
 
 
 
 const Sider: FC = () => {
+    const { Item } = Menu;
 
     return (
         <aside>
-            Sider.
+            <Menu>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+            </Menu>
         </aside>
     )
 }

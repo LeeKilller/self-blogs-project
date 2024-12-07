@@ -1,9 +1,7 @@
 import type { RouteObject } from "react-router";
 import { AdminLayout } from "@/layout";
-import {
-    EditPage
-} from '@/views'
-
+import LazyLoad from "@/components/LazyLoad";
+import { lazy } from "@loadable/component";
 
 const adminRoutes: RouteObject[] = [
     {
@@ -12,7 +10,23 @@ const adminRoutes: RouteObject[] = [
         children:[
             {
                 path:'edit',
-                element:<EditPage />
+                element:LazyLoad(lazy(() => import('@/views/EditPage')))
+            },
+            {
+                path:'analyse',
+                element:LazyLoad(lazy(() => import('@/views/Analyse')))
+            },
+            {
+                path:'darfts',
+                element:LazyLoad(lazy(() => import('@/views/Drafts')))
+            },
+            {
+                path:'articles',
+                element:LazyLoad(lazy(() => import('@/views/Articles')))
+            },
+            {
+                path:'picture',
+                element:LazyLoad(lazy(() => import('@/views/Pictures')))
             }
         ]
     }
