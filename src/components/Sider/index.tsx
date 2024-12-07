@@ -21,7 +21,7 @@ const Sider: FC = () => {
         <aside className={siderWrapper}>
             <Menu>
                 <Item>
-                    <Link to='/admin/analyse'><LineChartOutlined />分析概览</Link>
+                    <Link to='/admin'><LineChartOutlined />分析概览</Link>
                 </Item>
                 <Item>
                     <Link to='/admin/articles'><FileTextOutlined />文章管理</Link>
