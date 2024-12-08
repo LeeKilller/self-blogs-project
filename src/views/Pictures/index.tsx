@@ -1,10 +1,25 @@
 import { FC } from 'react'
 
+import { Layout, theme } from 'antd';
 
-const Pictures:FC = () => {
+const {
+    Header,
+    Content
+} = Layout;
+
+
+const Pictures: FC = () => {
+    const {
+        token: { colorBgContainer },
+    } = theme.useToken();
 
     return (
-        <div>Pictures</div>
+        <Layout>
+            <Header style={{ padding: 0, background: colorBgContainer }}></Header>
+            <Content>
+                <div>Pictures</div>
+            </Content>
+        </Layout>
     )
 }
 

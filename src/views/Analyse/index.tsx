@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import { Layout, theme } from 'antd';
 
-
-
 const {
     Header,
     Content
