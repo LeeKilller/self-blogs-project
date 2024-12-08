@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { useState } from 'react';
-import type { MenuProps } from 'antd';
+import { useState, useEffect } from 'react';
 import { Menu } from 'antd';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
+
+import type { MenuItem } from '@/global/types';
 import LoginBtn from './LoginBtn';
 import ThemeSelector from './ThemeSelector';
 import SearchBtn from './SearchBtn';
@@ -10,15 +11,37 @@ import SearchBtn from './SearchBtn';
 import header from '@/assets/header.svg';
 import styles from './navbar.module.less';
 
+
+const items: MenuItem[] = [
+    {
+        label:<Link to="/">首页</Link>,
+        key:'/'
+    },
+    {
+        label:<Link to="/tags">标签</Link>,
+        key:'/tags'
+    },
+    {
+        label:<Link to="/timeline">时间线</Link>,
+        key:'/timeline'
+    },
+    {
+        label:<Link to="/about">关于</Link>,
+        key:'/about'
+    }
+]
+
+const { navBarWrapper, menu} = styles;
+
 const NavBar: FC = () => {
-    const [ curActiveKey, setCurActiveKey ] = useState('home');
+    const [ curActiveKey, setCurActiveKey ] = useState('/');
     
-    const { Item } = Menu;
-    const { navBarWrapper, menu} = styles;
+    const location = useLocation();
+
+    useEffect(()=>{
+        setCurActiveKey(location.pathname);
+    },[location])
     
-    const handleLinkClick: MenuProps['onClick'] = (e) => {
-        setCurActiveKey(e.key);
-    } 
 
     return (
         <nav className={navBarWrapper}>
@@ -28,22 +51,9 @@ const NavBar: FC = () => {
                 theme='light'
                 mode="horizontal" 
                 selectedKeys={[curActiveKey]} 
-                onClick={handleLinkClick}
                 className={menu}
-            >
-                <Item key={'home'}>
-                    <Link to="/">首页</Link>
-                </Item>
-                <Item key={'tags'}>
-                    <Link to="/tags">标签</Link>
-                </Item>
-                <Item key={'timeline'}>
-                    <Link to="/timeline">时间线</Link>
-                </Item>
-                <Item key={'about'}>
-                    <Link to="/about">关于</Link>
-                </Item>
-            </Menu>
+                items={items}
+            />
             <SearchBtn />
             <ThemeSelector />
             <LoginBtn />

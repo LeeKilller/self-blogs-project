@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router';
-import Sider from '@/components/Sider';
+import { Layout, theme } from 'antd';
+
+import { SiderComponent } from '@/components';
 import styles from './adminlayout.module.less';
 
 
@@ -12,10 +14,10 @@ const AdminLayout: FC = () => {
     
 
     return (
-        <div className={adminLayoutWrapper}>
-            <Sider />
+        <Layout className={adminLayoutWrapper}>
+            <SiderComponent />
             <Outlet />
-        </div>
+        </Layout>
     )
 }
 

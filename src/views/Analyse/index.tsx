@@ -1,10 +1,27 @@
-import { FC } from 'react'
+import { FC } from 'react';
+import { Layout, theme } from 'antd';
 
 
-const Analyse:FC = () => {
+
+const {
+    Header,
+    Content
+} = Layout;
+
+
+const Analyse: FC = () => {
+    const {
+        token: { colorBgContainer },
+      } = theme.useToken();
+    
 
     return (
-        <div>Analyse</div>
+        <Layout>
+            <Header style={{ padding: 0, background: colorBgContainer }}></Header>
+            <Content>
+                <div>Analyse</div>
+            </Content>
+        </Layout>
     )
 }
 

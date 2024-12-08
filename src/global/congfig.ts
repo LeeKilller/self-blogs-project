@@ -2,12 +2,9 @@ import { ThemeTypes } from "./enums";
 
 const { Light, Dark } = ThemeTypes;
 
-const themConfig = {
-    them: 'light',
+const themPublic = {
     token: {
-        colorPrimary: '#00b96b',
-        borderRadius: 2,
-        colorBgContainer: '#f6ffed',
+        borderRadius: 5,
     },
 }
 
@@ -15,14 +12,16 @@ export const themMap = {
     [Light]:{
         token:{
             colorPrimary: '#0052d9',
-            borderRadius: 5,
             colorBgContainer: '#ffffff',
+            ...themPublic.token
         }
     },
 
     [Dark]: {
         token:{
-
+            colorPrimary: '#b5f5ec',
+            colorBgContainer: '#141414',
+            ...themPublic.token
         }
     }
 }
