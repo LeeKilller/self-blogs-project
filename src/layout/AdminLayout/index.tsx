@@ -12,7 +12,6 @@ const {
 
 const AdminLayout: FC = () => {
     
-
     return (
         <Layout className={adminLayoutWrapper}>
             <SiderComponent />

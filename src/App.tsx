@@ -10,7 +10,6 @@ const App: FC = () => {
 
 
     return (
-
         <ConfigProvider
             theme={themMap[curTheme]}
         >

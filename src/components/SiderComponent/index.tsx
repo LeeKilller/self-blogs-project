@@ -19,8 +19,7 @@ import styles from './sider.module.less';
 
 const { Sider } = Layout;
 const {
-    siderWrapper,
-    sideTrigger
+    siderWrapper
 } = styles;
 
 const items: MenuItem[] = [
@@ -67,6 +66,8 @@ const SiderComponent: FC = () => {
             collapsible
             collapsed={isMenuFlod}
             theme='light'
+            breakpoint='lg'
+            onBreakpoint={(borken)=>borken?setIsMenuFlod(true):setIsMenuFlod(false)}
         >
             <div
                 className={siderWrapper}
