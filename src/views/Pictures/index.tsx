@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useRef } from 'react'
+import { FC, useState } from 'react'
 
 import {
     Layout,
@@ -31,15 +31,13 @@ const Pictures: FC = () => {
 
     const [curPage, setCurPage] = useState<number>(1);
 
-    const contentRef = useRef<HTMLDivElement | null>(null);
-
     return (
         <Layout className={picturesWrapper}>
             <Header style={{ padding: 0, background: colorBgContainer }}>
                 <PictureHeader />
             </Header>
             <Content style={{ padding: 10 }}>
-                <div ref={contentRef} className={contentWrapper}>
+                <div className={contentWrapper}>
                     <Image.PreviewGroup
                         preview={{
                             onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),

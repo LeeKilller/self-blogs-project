@@ -22,7 +22,6 @@ const LazyLoad = (Component: LoadableComponent<any>): ReactNode => {
             width:'100%'
           }}
           indicator={<LoadingOutlined spin style={{fontSize:'50px'}}/>}
-          tip="laoding..."
         />
       }
     >
