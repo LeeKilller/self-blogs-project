@@ -1,3 +1,5 @@
+@import url(/src/design/utils.less);
+
 
 .picturesWrapper {
 
@@ -10,5 +12,27 @@
 
     .contentWrapper {
         width: 100%;
+        height: 690px;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(3,230px);
+        gap: 10px;
+
+        .imgPlaceHoldder {
+            width: 100%;
+            height: 100%;
+            .middled();
+        }
+
+        .imgMask {
+            width: 100%;
+            height: 100%;
+            .imgEllipsis {
+                font-size: 20px;
+                position: absolute;
+                top: 5px;
+                right: 10px;
+            }
+        }
     }
 }

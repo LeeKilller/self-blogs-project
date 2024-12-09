@@ -8,6 +8,7 @@ import {
 } from 'antd';
 
 import PictureHeader from './PictureHeader';
+import ImageItem from './ImageItem';
 
 import styles from './pictures.module.less';
 
@@ -31,22 +32,6 @@ const Pictures: FC = () => {
     const [curPage, setCurPage] = useState<number>(1);
 
     const contentRef = useRef<HTMLDivElement | null>(null);
-    const [imgWidth, setImgWidth] = useState<number>(240);
-    useEffect(() => {
-        setImgWidth(contentRef.current!.clientWidth / 5);
-
-        const resizeHandler = () => {
-            setImgWidth(contentRef.current!.clientWidth / 5);
-        }
-
-
-        window.addEventListener("resize", resizeHandler);
-
-
-        return () => {
-            window.removeEventListener("resize", resizeHandler);
-        }
-    }, [])
 
     return (
         <Layout className={picturesWrapper}>
@@ -60,7 +45,13 @@ const Pictures: FC = () => {
                             onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
                         }}
                     >
-                        {imgList.map(({ url }, index) => (index < 15 ? <Image key={index} width={imgWidth} src={url} /> : null))}
+                        {imgList.map((data, index) => 
+                            (index < 15 ? <ImageItem 
+                                                key={data.index} 
+                                                data={data}
+                                            /> 
+                                : null)
+                        )}
                     </Image.PreviewGroup>
                 </div>
                 <Pagination

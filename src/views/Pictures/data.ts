@@ -1,3 +1,13 @@
+
+interface ImgObj {
+  key: string, // md5码
+  name: string, // 图片名称
+  index: number, // 图片索引
+  url: string, // 图片链接，可通过该链接直接获取图片
+  type: 'png' | 'jpg' | 'webp' | 'gif',// 图片类型
+  size: number, // 图片大小，单位默认
+}
+
 export const imgList = [
     {
       key: '7b5be36f8eb3ab715a285ade37d40d2b',
@@ -11,7 +21,7 @@ export const imgList = [
       key: '857d695b34dc9d63903c1b64d6f97db5',
       name: '图片_2',
       index: 2,
-      url: 'https://blog-demo.mereith.com/static/img/857d695b34dc9d63903c1b64d6f97db5.10049.webp',
+      url: 'https://blog-demo.mereith.com/static/img/1c0f0f187738b41f911a3a2e9da470c6.10025.webp',
       type: 'webp',
       size: 72377
     },
@@ -239,4 +249,4 @@ export const imgList = [
       type: 'webp',
       size: 45776
     }
-  ]
+  ] as ImgObj[]
