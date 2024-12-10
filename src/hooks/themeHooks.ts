@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "./storeHooks";
 import { switchTheme } from "@/store/modules/customSlice";
+import { setIsMenuFlod } from "@/store/modules/adminSlice";
 
 
 const useTheme = () => {
@@ -16,8 +17,22 @@ const useTheme = () => {
     }
 }
 
+const useMenuFlod = () => {
+    const dispatch = useAppDispatch();
+    const { isMenuFlod } = useAppSelector(state => state.admin);
+
+    return [
+        isMenuFlod,
+        (x:boolean)=>{
+            dispatch(setIsMenuFlod(x));
+        }
+    ] as [boolean,(x:boolean)=>void]
+        
+}
+
 
 
 export {
-    useTheme
+    useTheme,
+    useMenuFlod
 }

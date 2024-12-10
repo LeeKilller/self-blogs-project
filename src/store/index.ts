@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit/react";
 import customReducer from "./modules/customSlice";
+import adminReducer from "./modules/adminSlice";
 
 const store = configureStore({
     reducer: {
-        custom:customReducer
+        custom:customReducer,
+        admin:adminReducer
     }
 });
 

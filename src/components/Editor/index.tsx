@@ -32,7 +32,8 @@ const EditorComponent: FC = () => {
 
 
     return (
-        <Editor
+        <>
+            <Editor
             value={value}
             plugins={plugins}
             locale={cn}
@@ -40,6 +41,7 @@ const EditorComponent: FC = () => {
                 setValue(v)
             }}
         />
+        </>
     )
 }
 

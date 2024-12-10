@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+import { useState, useEffect } from 'react';
 import { Layout, Menu, theme } from 'antd';
-import { Link, Outlet } from 'react-router';
+import { Link, Outlet, useLocation } from 'react-router';
 
 import type { MenuItem } from '@/global/types';
 
@@ -11,7 +12,7 @@ const {
 
 const items: MenuItem[] = [
     {
-        key:'overview',
+        key:'/admin/analyse',
         label:<Link to="/admin/analyse" >访问总览</Link>
     }
 ];
@@ -19,8 +20,15 @@ const items: MenuItem[] = [
 const Analyse: FC = () => {
     const {
         token: { colorBgContainer },
-      } = theme.useToken();
+    } = theme.useToken();
     
+    const [ curActiveKey, setCurActiveKey ] = useState('/');
+    
+    const { pathname } = useLocation();
+
+    useEffect(()=>{
+        setCurActiveKey(pathname);
+    },[pathname])
 
     return (
         <Layout>
@@ -33,6 +41,7 @@ const Analyse: FC = () => {
                         fontSize:16,
                         lineHeight:'48px'
                     }}
+                    selectedKeys={[curActiveKey]} 
                 />
             </Header>
             <Content>

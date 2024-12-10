@@ -10,6 +10,8 @@ import {
     MenuUnfoldOutlined,
 } from '@ant-design/icons';
 
+import { useMenuFlod } from '@/hooks';
+
 import SideHeader from './SideHeader';
 import SideFooter from './SideFooter';
 
@@ -24,7 +26,7 @@ const {
 
 const items: MenuItem[] = [
     {
-        key: '/admin',
+        key: '/admin/analyse',
         icon: <LineChartOutlined />,
         label: <Link to='/admin'>分析概览</Link>
     },
@@ -47,7 +49,7 @@ const items: MenuItem[] = [
 
 
 const SiderComponent: FC = () => {
-    const [isMenuFlod, setIsMenuFlod] = useState<boolean>(false);
+    const [isMenuFlod, setIsMenuFlod] = useMenuFlod();
 
     const [curActiveKey, setCurActiveKey] = useState('/');
 
