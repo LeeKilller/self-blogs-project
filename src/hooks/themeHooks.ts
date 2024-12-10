@@ -12,6 +12,7 @@ const useTheme = () => {
     return {
         curTheme: theme,
         switchCurTheme: () => {
+            
             dispatch(switchTheme());
         }
     }

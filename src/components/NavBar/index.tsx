@@ -45,7 +45,6 @@ const NavBar: FC = () => {
 
     return (
         <nav className={navBarWrapper}>
-            <hr />
             <img src={header} />
             <Menu 
                 theme='light'
@@ -53,6 +52,9 @@ const NavBar: FC = () => {
                 selectedKeys={[curActiveKey]} 
                 className={menu}
                 items={items}
+                style={{
+                    borderBottom:'none'
+                }}
             />
             <SearchBtn />
             <ThemeSelector />

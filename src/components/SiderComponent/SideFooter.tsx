@@ -19,7 +19,7 @@ const { Light } = ThemeTypes;
 
 
 const SideFooter: FC = () => {
-    const { curTheme } = useTheme();
+    const { curTheme, switchCurTheme } = useTheme();
 
     const items: MenuItem[] = [
         {
@@ -30,7 +30,8 @@ const SideFooter: FC = () => {
         {
             key:'theme',
             label:curTheme === Light?'亮色模式':'暗色模式',
-            icon:curTheme === Light?<SunOutlined />:<MoonOutlined />
+            icon:curTheme === Light?<SunOutlined />:<MoonOutlined />,
+            onClick:()=>switchCurTheme()
         },
         {
             key:'logout',

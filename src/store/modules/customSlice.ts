@@ -22,8 +22,8 @@ const customSlice = createSlice({
         switchTheme(state){
             if(state.theme === Light) {
                 state.theme = Dark;
+                return;
             }
-
             state.theme = Light;
         }
     }

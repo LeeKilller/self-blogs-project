@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { SettingOutlined } from '@ant-design/icons';
+import { Tooltip } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router';
 import styles from './navbar.module.less';
 
@@ -14,12 +15,14 @@ const LoginBtn: FC = () => {
     }
 
     return (
-        <div 
-            className={loginBtn}
-            onClick={handleClick}
-        >
-            <SettingOutlined />
-        </div>
+        <Tooltip placement='bottomRight' title="管理登录">
+            <div
+                className={loginBtn}
+                onClick={handleClick}
+            >
+                <UserOutlined />
+            </div>
+        </Tooltip>
     )
 }
 
