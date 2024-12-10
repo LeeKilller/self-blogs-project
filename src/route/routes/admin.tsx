@@ -3,7 +3,6 @@ import { Navigate } from "react-router";
 import { AdminLayout } from "@/layout";
 import LazyLoad from "@/components/LazyLoad";
 import { lazy } from "@loadable/component";
-import analyseRoutes from "./analyse";
 
 const adminRoutes: RouteObject[] = [
     {
@@ -34,7 +33,10 @@ const adminRoutes: RouteObject[] = [
                 path:'analyse',
                 element:LazyLoad(lazy(() => import('@/views/Analyse'))),
                 children:[
-                    ...analyseRoutes
+                    {
+                        index:true,
+                        element: LazyLoad(lazy(()=>import("@/views/OverView")))
+                    }
                 ]
             }
         ]
