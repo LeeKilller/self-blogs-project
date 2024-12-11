@@ -11,9 +11,9 @@ const themPublic = {
 export const themMap = {
     [Light]:{
         token:{
-            colorPrimary: '#0052d9',
+            colorPrimary: '#36cfc9',
             colorBgContainer: '#ffffff',
-            ...themPublic.token
+            ...themPublic.token,
         }
     },
 

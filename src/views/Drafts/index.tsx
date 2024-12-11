@@ -43,7 +43,7 @@ const items: MenuItem[] = [
 
 const Drafts: FC = () => {
     const {
-        token: { colorBgContainer },
+        token: { colorBgContainer, colorPrimary },
     } = theme.useToken();
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
     const navigate = useNavigate();
@@ -109,10 +109,10 @@ const Drafts: FC = () => {
 
                 return (
                     <Space>
-                        <a onClick={handleEdit}>编辑</a>
-                        <a>发布</a>
+                        <a onClick={handleEdit}  style={{color:colorPrimary}}>编辑</a>
+                        <a  style={{color:colorPrimary}}>发布</a>
                         <Dropdown menu={{ items }} placement="bottom">
-                            <a><EllipsisOutlined /></a>
+                            <a  style={{color:colorPrimary}}><EllipsisOutlined /></a>
                         </Dropdown>
                     </Space>
                 )

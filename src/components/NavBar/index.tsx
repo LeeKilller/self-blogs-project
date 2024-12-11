@@ -7,8 +7,13 @@ import type { MenuItem } from '@/global/types';
 import LoginBtn from './LoginBtn';
 import ThemeSelector from './ThemeSelector';
 import SearchBtn from './SearchBtn';
+import { useTheme } from '@/hooks';
+import { ThemeTypes } from '@/global/enums';
+const { Light } = ThemeTypes;
 
 import header from '@/assets/header.svg';
+import headerDark from '@/assets/headerDark.svg';
+
 import styles from './navbar.module.less';
 
 
@@ -35,6 +40,7 @@ const { navBarWrapper, menu} = styles;
 
 const NavBar: FC = () => {
     const [ curActiveKey, setCurActiveKey ] = useState('/');
+    const { curTheme } = useTheme();
     
     const location = useLocation();
 
@@ -45,7 +51,7 @@ const NavBar: FC = () => {
 
     return (
         <nav className={navBarWrapper}>
-            <img src={header} />
+            <img src={curTheme === Light?header:headerDark} />
             <Menu 
                 theme='light'
                 mode="horizontal" 

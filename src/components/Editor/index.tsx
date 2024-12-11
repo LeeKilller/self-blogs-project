@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import 'bytemd/dist/index.css';
 import gfm from '@bytemd/plugin-gfm';
-import highlightSsr from '@bytemd/plugin-highlight-ssr';
+import highlight from '@bytemd/plugin-highlight';
 import { Editor } from '@bytemd/react';
 import { cn } from './locales';
 import './styles/github-markdown.css';
@@ -9,8 +9,8 @@ import './styles/custom-container.css';
 import './styles/code-light.css';
 import './styles/code-light.css';
 import './index.less';
-import { 
-    customCodeBlock, 
+import {
+    customCodeBlock,
     rawHTML,
     historyIcon,
     Heading
@@ -22,9 +22,25 @@ const plugins = [
     rawHTML(),
     historyIcon(),
     Heading(),
-    highlightSsr()
+    highlight()
     // Add more plugins here
 ]
+
+const sanitize = (schema:any) => {
+    schema.protocols.src.push('data');
+    schema.tagNames.push('center');
+    schema.tagNames.push('iframe');
+    schema.tagNames.push('script');
+    schema.attributes['*'].push('style');
+    schema.attributes['*'].push('src');
+    schema.attributes['*'].push('scrolling');
+    schema.attributes['*'].push('border');
+    schema.attributes['*'].push('frameborder');
+    schema.attributes['*'].push('framespacing');
+    schema.attributes['*'].push('allowfullscreen');
+    schema.strip = [];
+    return schema;
+};
 
 
 const EditorComponent: FC = () => {
@@ -34,13 +50,14 @@ const EditorComponent: FC = () => {
     return (
         <>
             <Editor
-            value={value}
-            plugins={plugins}
-            locale={cn}
-            onChange={(v) => {
-                setValue(v)
-            }}
-        />
+                value={value}
+                plugins={plugins}
+                locale={cn}
+                sanitize={sanitize}
+                onChange={(v) => {
+                    setValue(v)
+                }}
+            />
         </>
     )
 }

@@ -11,6 +11,10 @@ import {
 } from '@ant-design/icons';
 
 import { useMenuFlod } from '@/hooks';
+import { useTheme } from '@/hooks';
+import { ThemeTypes } from '@/global/enums';
+
+const { Light } = ThemeTypes;
 
 import SideHeader from './SideHeader';
 import SideFooter from './SideFooter';
@@ -53,6 +57,8 @@ const SiderComponent: FC = () => {
 
     const [curActiveKey, setCurActiveKey] = useState('/');
 
+    const { curTheme } = useTheme();
+
     const location = useLocation();
 
     useEffect(() => {
@@ -73,6 +79,7 @@ const SiderComponent: FC = () => {
         >
             <div
                 className={siderWrapper}
+                style={curTheme === Light?undefined:{boxShadow:'rgba(13, 13, 13, 0.65) 0 0 5px 1px'}}
             >
                 <SideHeader isMenuFold={isMenuFlod} />
                 <Menu

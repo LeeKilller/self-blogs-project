@@ -12,7 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
     "@bytemd/plugin-gfm": "^1.21.0",
-    "@bytemd/plugin-highlight-ssr": "^1.21.0",
+    "@bytemd/plugin-highlight": "^1.21.0",
     "@bytemd/react": "^1.21.0",
     "@loadable/component": "5.16.3",
     "@reduxjs/toolkit": "^2.4.0",
@@ -23,6 +23,7 @@
     "autoprefixer": "^10.4.20",
     "copy-to-clipboard": "3.3.3",
     "echarts": "^5.5.1",
+    "highlight.js": "^11.10.0",
     "less": "^4.2.1",
     "particles-bg": "^2.5.5",
     "postcss": "^8.4.49",

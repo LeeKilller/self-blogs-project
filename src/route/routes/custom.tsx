@@ -23,6 +23,10 @@ const customRoutes: RouteObject[] = [
             {
                 path:'about',
                 element:LazyLoad(lazy(()=>import('@/views/About')))
+            },
+            {
+                path:'postview',
+                element:LazyLoad(lazy(()=>import('@/views/PostView')))
             }
         ]
     }

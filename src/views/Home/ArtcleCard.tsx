@@ -1,5 +1,6 @@
 import { Flex, Space, Tag } from 'antd';
 import type { FC } from 'react';
+import { useNavigate } from 'react-router';
 
 
 interface DraftObj {
@@ -23,10 +24,11 @@ interface IProps {
 
 const ArtcleCard: FC<IProps> = ({articleData}) => {
     const { title, tags ,initialTime, description } = articleData;
+    const navigate = useNavigate();
 
 
     return (
-        <div>
+        <div onClick={()=>navigate('/postview')} style={{cursor:'pointer'}}>
             <h3>{title}</h3>
             <p>{description}</p>
             <Flex justify='space-between' style={{marginTop:5}}>

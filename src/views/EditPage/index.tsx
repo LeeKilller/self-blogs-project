@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 
 import { Layout, theme } from 'antd';
 
-import { useMenuFlod } from '@/hooks';
+import { useMenuFlod, useTheme } from '@/hooks';
 
 import EditorComponent from '@/components/Editor';
 import EditHeader from './EditHeader';
@@ -15,6 +15,7 @@ const { Header, Content } = Layout;
 
 const EditPage: FC = () => {
     const [_,setIsMenuFlod] = useMenuFlod();
+    const { curTheme } = useTheme();
 
     useEffect(()=>{
         setIsMenuFlod(true);
@@ -30,7 +31,7 @@ const EditPage: FC = () => {
                 <EditHeader />
             </Header>
             <Content>
-                <div className='light' style={{
+                <div className={curTheme} style={{
                     width:'100%',
                     height:'100%'
                 }}>

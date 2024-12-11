@@ -12,7 +12,7 @@ interface customState {
 
 
 const initialState: customState = {
-    theme: Light
+    theme: localStorage.getItem('theme') as ThemeTypes || Light
 }
 
 const customSlice = createSlice({
@@ -22,8 +22,11 @@ const customSlice = createSlice({
         switchTheme(state){
             if(state.theme === Light) {
                 state.theme = Dark;
+                localStorage.setItem('theme', Dark);
                 return;
             }
+
+            localStorage.setItem('theme',Light);
             state.theme = Light;
         }
     }

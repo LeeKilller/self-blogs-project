@@ -2,12 +2,11 @@ import type { BytemdPlugin } from 'bytemd';
 import { visit } from 'unist-util-visit';
 import copy from 'copy-to-clipboard';
 import { message } from 'antd';
-//import hljs from 'highlight.js';
+import hljs from 'highlight.js';
 // FIXME: Addd Types
 const codeBlockPlugin = () => (tree: any) => {
   visit(tree, (node) => {
     if (node.type === 'element' && node.tagName === 'pre') {
-      // console.log(node);
       
       const oldChildren = JSON.parse(JSON.stringify(node.children));
       const codeProperties = oldChildren.find((child: any) => child.tagName === 'code').properties;
@@ -21,22 +20,11 @@ const codeBlockPlugin = () => (tree: any) => {
         }
       }
       if (language === 'mermaid') return;
+
+
+
+
       // 复制按钮
-
-      // 先找到type==‘text’的节点在children
-      // const codeContent = oldChildren.find((child: any) => child.tagName === 'code').children.find((child: any) => child.type === 'text');
-      // // 再用highlight改value
-      // codeContent.value = hljs.highlight(
-      //   codeContent.value,
-      //   { language }
-      // ).value;
-
-      // // codeContent.type = 'element';
-      // // codeContent.tagName = 'div';
-
-      // console.log(codeContent.value);
-      
-
       const codeCopyBtn = {
         type: 'element',
         tagName: 'div',

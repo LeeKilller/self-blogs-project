@@ -44,7 +44,7 @@ const items: MenuItem[] = [
 
 const Articles: FC = () => {
     const {
-        token: { colorBgContainer },
+        token: { colorBgContainer, colorPrimary },
     } = theme.useToken();
 
 
@@ -117,10 +117,10 @@ const Articles: FC = () => {
 
                 return (
                     <Space>
-                        <a onClick={handleEdit}>编辑</a>
-                        <a>回收</a>
+                        <a onClick={handleEdit}  style={{color:colorPrimary}}>编辑</a>
+                        <a  style={{color:colorPrimary}}>回收</a>
                         <Dropdown menu={{ items }} placement="bottom">
-                            <a><EllipsisOutlined /></a>
+                            <a  style={{color:colorPrimary}}><EllipsisOutlined /></a>
                         </Dropdown>
                     </Space>
                 )
