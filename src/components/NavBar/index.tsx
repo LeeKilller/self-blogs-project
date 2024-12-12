@@ -59,7 +59,9 @@ const NavBar: FC = () => {
                 className={menu}
                 items={items}
                 style={{
-                    borderBottom:'none'
+                    borderBottom:'none',
+                    flex:'auto',
+                    minWidth:0
                 }}
             />
             <SearchBtn />
