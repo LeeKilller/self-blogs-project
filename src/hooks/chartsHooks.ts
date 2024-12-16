@@ -52,9 +52,9 @@ const useECharts = (
         
         chartInstance = echarts.init(el, t);
 
-        if(chartInstance) {
-            // console.log('success init');
-        }
+        // if(chartInstance) {
+        //     // console.log('success init');
+        // }
 
         window.addEventListener('resize', resizeFn);
     }
