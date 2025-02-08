@@ -33,20 +33,20 @@ const Login: FC = () => {
     return (
         <div className={`${loginWrapper} ${curTheme}`}>
             <ParticlesBg type='cobweb' color={colorPrimary} bg={true} />
-            <div 
-                className={loginBox} 
+            <div
+                className={loginBox}
                 style={
-                    curTheme === Light?undefined:
-                    {
-                        backgroundColor:'rgba(41, 43, 43,.6)',
-                        boxShadow:'0 0 5px 2px #292b2b'
-                    }
+                    curTheme === Light ? undefined :
+                        {
+                            backgroundColor: 'rgba(41, 43, 43,.6)',
+                            boxShadow: '0 0 5px 2px #292b2b'
+                        }
                 }
             >
                 <header className={loginHeader}>
                     <div>
                         <img src={logo} />
-                        <h2 style={curTheme === Light?undefined:{color:'#dcdcdc'}}>Si Blogs</h2>
+                        <h2 style={curTheme === Light ? undefined : { color: '#dcdcdc' }}>Si Blogs</h2>
                     </div>
                     <h3>Si Blogs 管理后台</h3>
                 </header>
@@ -59,10 +59,22 @@ const Login: FC = () => {
                     }}
                 >
                     <Form className={loginForm}>
-                        <Item>
+                        <Item
+                            name="username"
+                            rules={[{
+                                required: true,
+                                message: "Please input.",
+                            }]}
+                        >
                             <Input prefix={<UserOutlined />} placeholder='用户名' size='large' />
                         </Item>
-                        <Item>
+                        <Item
+                            name="password"
+                            rules={[{
+                                required: true,
+                                message: "Please input.",
+                            }]}
+                        >
                             <Input.Password prefix={<LockOutlined />} placeholder='密码' size='large' />
                         </Item>
                         <Item>
